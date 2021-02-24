@@ -17,7 +17,7 @@
 		"commands": [
 			{
 				"command": "hands-on-functional-programming.helloWorld",
-				"title": "Hello World"
+				"title": "Hands on functional programming"
 			}
 		]
 	},
