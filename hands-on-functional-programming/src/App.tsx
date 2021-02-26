@@ -1,11 +1,15 @@
 import * as React from "react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
+import { theme } from "./utils/theme";
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <p>Hello world!</p>
-      </div>
+      <ChakraProvider theme={theme}>
+        <Box background="var(--vscode-textCodeBlock-background)">
+          <p>Hello world!</p>
+        </Box>
+      </ChakraProvider>
     );
   }
 }
