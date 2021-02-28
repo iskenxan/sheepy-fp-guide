@@ -4,7 +4,7 @@ import Selectors from "./Selectors";
 
 export default function Main() {
   return (
-    <Box d="flex" flexDirection="column">
+    <Box padding="24px" d="flex" flexDirection="column">
       <Selectors />
     </Box>
   );
