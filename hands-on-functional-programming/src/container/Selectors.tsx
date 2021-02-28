@@ -9,6 +9,7 @@ import {
   objectOptions,
   relationOptions
 } from "../utils/options";
+import { useMainContext } from "./MainContext";
 
 const subjectOptions = [
   { value: "list", label: "List []" },
@@ -40,6 +41,7 @@ const defaultValueMap: any = {
 export default function Selectors() {
   const [objectSelection, setObjectSelection] = useState("");
   const [actionSelection, setActionSelection] = useState("");
+  const { setAction } = useMainContext();
 
   const handleObjectSelection = (value: string) => {
     setObjectSelection(value);
@@ -47,6 +49,7 @@ export default function Selectors() {
 
   const handleActionSelection = (value: string) => {
     setActionSelection(value);
+    setAction(value);
   };
 
   return (

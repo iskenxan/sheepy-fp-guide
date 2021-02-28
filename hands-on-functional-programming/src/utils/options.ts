@@ -240,7 +240,7 @@ export const logicOptions = [
   { label: "invert a predicate function", value: "complement" },
   {
     label: "know if a value satisfies at least one of two predicates",
-    value: "	either"
+    value: "either"
   },
   { label: "know if a value satisfies two predicates", value: "both" },
   {
@@ -278,15 +278,15 @@ export const relationOptions = [
 ];
 
 export const mathsOptions = [
-  { label: "increment a number by one	", value: "inc" },
-  { label: "decrement a number by one	", value: "dec" },
-  { label: "add two numbers	", value: "add" },
+  { label: "increment a number by one", value: "inc" },
+  { label: "decrement a number by one", value: "dec" },
+  { label: "add two numbers", value: "add" },
   { label: "ubtract one number from another	", value: "subtract" },
-  { label: "multiply two numbers	", value: "multiply" },
-  { label: "divide one number by another	", value: "divide" },
+  { label: "multiply two numbers", value: "multiply" },
+  { label: "divide one number by another", value: "divide" },
   { label: "negate a number	", value: "negate" },
   {
-    label: "divide one number by another and get the remainder	",
+    label: "divide one number by another and get the remainder",
     value: "modulo / mathMod"
   }
 ];
