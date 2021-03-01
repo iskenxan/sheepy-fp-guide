@@ -4,6 +4,7 @@ export const colors = {
   bgColor: "var(--vscode-textCodeBlock-background)",
   fgColor: "var(--vscode-foreground)",
   fontSize: "var(--vscode-editor-font-size)",
+  linkColor: "#2196F3",
   primary: {
     50: "#f2eaff",
     100: "#d4c4f1",

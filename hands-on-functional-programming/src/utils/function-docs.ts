@@ -9,7 +9,7 @@ export const getAllFunctionDocs = (): IFunctionDoc[] => {
       doc: {
         title: name,
         description,
-        link: "",
+        link: `https://ramdajs.com/docs#${name}`,
         kind,
         signature: signature as string
       },

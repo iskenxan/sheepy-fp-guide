@@ -9,6 +9,7 @@ import {
   objectOptions,
   relationOptions
 } from "../utils/options";
+import { colors } from "../utils/theme";
 import { useMainContext } from "./MainContext";
 
 const subjectOptions = [
@@ -57,7 +58,7 @@ export default function Selectors() {
       <Box display="flex">
         <Text
           minW="80px"
-          color="white"
+          color={colors.fgColor}
           alignSelf="center"
           marginRight="12px"
           fontSize="18px"
@@ -73,7 +74,7 @@ export default function Selectors() {
       <Box d="flex" mt="18px">
         <Text
           minW="100px"
-          color="white"
+          color={colors.fgColor}
           marginRight="12px"
           alignSelf="center"
           fontSize="18px"

@@ -29,6 +29,7 @@
     "prism-react-renderer": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-markdown": "^5.0.3",
     "terser": "3.16.0",
     "vscode": "^1.1.17"
   },
