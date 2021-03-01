@@ -1,20 +1,20 @@
 {
-  "name": "practical-fp-guide",
+  "name": "sheepy",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.23.0"
   },
-  "publisher": "rebornix",
+  "publisher": "iskenxan",
   "activationEvents": [
-    "onCommand:practical-fp-guide.start"
+    "onCommand:sheepy.start"
   ],
   "main": "./build/ext-src/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "practical-fp-guide.start",
-        "title": "Start Hands on Functional Programming Guide",
-        "category": "FP Guide"
+        "command": "sheepy.start",
+        "title": "Start Sheepy FP guide",
+        "category": "Sheepy"
       }
     ]
   },

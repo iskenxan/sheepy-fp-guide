@@ -4,7 +4,7 @@ exports.activate = void 0;
 const path = require("path");
 const vscode = require("vscode");
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand('practical-fp-guide.start', () => {
+    context.subscriptions.push(vscode.commands.registerCommand("sheepy.start", () => {
         ReactPanel.createOrShow(context.extensionPath);
     }));
 }
@@ -17,15 +17,15 @@ class ReactPanel {
         this._disposables = [];
         this._extensionPath = extensionPath;
         // Create and show a new webview panel
-        this._panel = vscode.window.createWebviewPanel(ReactPanel.viewType, "React", column, {
+        this._panel = vscode.window.createWebviewPanel(ReactPanel.viewType, "Sheepy - Hands-on FP Guide", column, {
             // Enable javascript in the webview
             enableScripts: true,
             // And restric the webview to only loading content from our extension's `media` directory.
             localResourceRoots: [
-                vscode.Uri.file(path.join(this._extensionPath, 'build'))
+                vscode.Uri.file(path.join(this._extensionPath, "build"))
             ]
         });
-        // Set the webview's initial html content 
+        // Set the webview's initial html content
         this._panel.webview.html = this._getHtmlForWebview();
         // Listen for when the panel is disposed
         // This happens when the user closes the panel or when the panel is closed programatically
@@ -33,14 +33,16 @@ class ReactPanel {
         // Handle messages from the webview
         this._panel.webview.onDidReceiveMessage(message => {
             switch (message.command) {
-                case 'alert':
+                case "alert":
                     vscode.window.showErrorMessage(message.text);
                     return;
             }
         }, null, this._disposables);
     }
     static createOrShow(extensionPath) {
-        const column = vscode.window.activeTextEditor ? vscode.window.activeTextEditor.viewColumn : undefined;
+        const column = vscode.window.activeTextEditor
+            ? vscode.window.activeTextEditor.viewColumn
+            : undefined;
         // If we already have a panel, show it.
         // Otherwise, create a new panel.
         if (ReactPanel.currentPanel) {
@@ -53,7 +55,7 @@ class ReactPanel {
     doRefactor() {
         // Send a message to the webview webview.
         // You can send any JSON serializable data.
-        this._panel.webview.postMessage({ command: 'refactor' });
+        this._panel.webview.postMessage({ command: "refactor" });
     }
     dispose() {
         ReactPanel.currentPanel = undefined;
@@ -67,13 +69,13 @@ class ReactPanel {
         }
     }
     _getHtmlForWebview() {
-        const manifest = require(path.join(this._extensionPath, 'build', 'asset-manifest.json'));
-        const mainScript = manifest['main.js'];
-        const mainStyle = manifest['main.css'];
-        const scriptPathOnDisk = vscode.Uri.file(path.join(this._extensionPath, 'build', mainScript));
-        const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
-        const stylePathOnDisk = vscode.Uri.file(path.join(this._extensionPath, 'build', mainStyle));
-        const styleUri = stylePathOnDisk.with({ scheme: 'vscode-resource' });
+        const manifest = require(path.join(this._extensionPath, "build", "asset-manifest.json"));
+        const mainScript = manifest["main.js"];
+        const mainStyle = manifest["main.css"];
+        const scriptPathOnDisk = vscode.Uri.file(path.join(this._extensionPath, "build", mainScript));
+        const scriptUri = scriptPathOnDisk.with({ scheme: "vscode-resource" });
+        const stylePathOnDisk = vscode.Uri.file(path.join(this._extensionPath, "build", mainStyle));
+        const styleUri = stylePathOnDisk.with({ scheme: "vscode-resource" });
         // Use a nonce to whitelist which scripts can be run
         const nonce = getNonce();
         return `<!DOCTYPE html>
@@ -85,7 +87,9 @@ class ReactPanel {
 				<title>React App</title>
 				<link rel="stylesheet" type="text/css" href="${styleUri}">
 				<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-resource: https:; script-src 'nonce-${nonce}';style-src vscode-resource: 'unsafe-inline' http: https: data:;">
-				<base href="${vscode.Uri.file(path.join(this._extensionPath, 'build')).with({ scheme: 'vscode-resource' })}/">
+				<base href="${vscode.Uri.file(path.join(this._extensionPath, "build")).with({
+            scheme: "vscode-resource"
+        })}/">
 			</head>
 
 			<body>
@@ -97,7 +101,7 @@ class ReactPanel {
 			</html>`;
     }
 }
-ReactPanel.viewType = 'react';
+ReactPanel.viewType = "react";
 function getNonce() {
     let text = "";
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
