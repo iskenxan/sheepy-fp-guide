@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuSelector from "../components/MenuSelector";
 import {
   functionOptions,
@@ -11,6 +11,11 @@ import {
 } from "../utils/options";
 import { colors } from "../utils/theme";
 import { useMainContext } from "./MainContext";
+import { getState, setState } from "../utils/vsState";
+import {
+  ACTION_SELECTION_STATE,
+  OBJECT_SELECTION_STATE
+} from "../utils/consts";
 
 const subjectOptions = [
   { value: "list", label: "List []" },
@@ -43,14 +48,36 @@ export default function Selectors() {
   const [objectSelection, setObjectSelection] = useState("");
   const [actionSelection, setActionSelection] = useState("");
   const { setAction } = useMainContext();
+  const savedObjectSelection = getState(OBJECT_SELECTION_STATE);
+  const savedActionSelection = getState(ACTION_SELECTION_STATE);
+
+  const defaultObjectSelection = savedObjectSelection || null;
+  const defaultActionSelection =
+    savedActionSelection || defaultValueMap[objectSelection];
+
+  const restoreSelections = () => {
+    if (savedActionSelection) {
+      setActionSelection(savedActionSelection);
+      setAction(savedActionSelection);
+    }
+    if (savedObjectSelection) {
+      setObjectSelection(savedObjectSelection);
+    }
+  };
+
+  useEffect(() => {
+    restoreSelections();
+  }, [savedObjectSelection, savedActionSelection]);
 
   const handleObjectSelection = (value: string) => {
     setObjectSelection(value);
+    setState({ key: OBJECT_SELECTION_STATE, value });
   };
 
   const handleActionSelection = (value: string) => {
     setActionSelection(value);
     setAction(value);
+    setState({ key: ACTION_SELECTION_STATE, value });
   };
 
   return (
@@ -68,6 +95,7 @@ export default function Selectors() {
         <MenuSelector
           placeholder="Select an option"
           options={subjectOptions}
+          defaultValue={defaultObjectSelection}
           onSelect={handleObjectSelection}
         />
       </Box>
@@ -83,7 +111,7 @@ export default function Selectors() {
         </Text>
         <MenuSelector
           placeholder="Select an option"
-          defaultValue={defaultValueMap[objectSelection]}
+          defaultValue={defaultActionSelection}
           options={actionOptionsMap[objectSelection] || []}
           onSelect={handleActionSelection}
         />
