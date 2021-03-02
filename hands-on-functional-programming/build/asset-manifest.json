@@ -1,0 +1,11 @@
+{
+  "main.css": "./static/css/main.62c6af0a.css",
+  "main.js": "./static/js/main.61f7d2a0.js",
+  "main.js.map": "./static/js/main.61f7d2a0.js.map",
+  "static/media/sheepy.png": "./static/media/sheepy.5e720f0f.png",
+  "static/media/ramda.png": "./static/media/ramda.017d495f.png",
+  "static/css/main.62c6af0a.css.map": "./static/css/main.62c6af0a.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.5a2f3bc57fa1bcb4b033b2bc086e49cc.js": "./precache-manifest.5a2f3bc57fa1bcb4b033b2bc086e49cc.js",
+  "service-worker.js": "./service-worker.js"
+}
