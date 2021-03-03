@@ -1,9 +1,24 @@
 {
   "name": "sheepy",
+  "displayName": "Sheepy - interactive Ramda.JS guide",
+  "description": "Sheepy is the interactive Ramda.JS guide for VSCode. Find the right function for your task.",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.23.0"
   },
+  "icon": "src/assets/sheepy.png",
+  "homepage": "https://github.com/iskenxan/sheepy-fp-guide",
+  "categories": [
+    "Extension Packs",
+    "Visualization"
+  ],
+  "keywords": [
+    "ramda",
+    "functional programming",
+    "fp",
+    "interactive",
+    "guide"
+  ],
   "publisher": "iskenxan",
   "activationEvents": [
     "onCommand:sheepy.start"
@@ -55,6 +70,10 @@
     "rewire": "^4.0.1",
     "typescript": "^4.2.2",
     "vscode": "^1.1.37"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iskenxan/sheepy-fp-guide.git"
   },
   "browserslist": [
     ">0.2%",
