@@ -6,7 +6,7 @@
   "engines": {
     "vscode": "^1.23.0"
   },
-  "icon": "src/assets/sheepy.png",
+  "icon": "public/icon.png",
   "homepage": "https://github.com/iskenxan/sheepy-fp-guide",
   "categories": [
     "Extension Packs",
