@@ -10,9 +10,7 @@ One of the biggest challenges when starting out with FP is picking the right fun
 
 ![Sample gif](./sample.gif)
 
-## Usage
-This project is build using React and uses [this repo](https://github.com/rebornix/vscode-webview-react) as a template with a few modifications.
-
+## Run locally
 To run the project locally in VSCode run `yarn run build` or `yarn watch-build` from the root directory. After the code finishes compiling, you can run the extension using F5 key.
 
 ## Contributing
