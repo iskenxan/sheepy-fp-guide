@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ce549dfdcf860d3da8ae",
-    "url": "./static/css/main.62c6af0a.css"
+    "revision": "3af26a3354a768670206",
+    "url": "./static/css/main.2c6b961b.css"
   },
   {
-    "revision": "ce549dfdcf860d3da8ae",
-    "url": "./static/js/main.ce549dfd.js"
+    "revision": "3af26a3354a768670206",
+    "url": "./static/js/main.3af26a33.js"
   },
   {
     "revision": "5e720f0f4bf122a7a467db4217435a45",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "./static/media/ramda.017d495f.png"
   },
   {
-    "revision": "f8578179a798d194b0bd62867b78151a",
+    "revision": "e879c8f14cecb2f7f17967c6b4d1cc33",
     "url": "./index.html"
   }
 ];
