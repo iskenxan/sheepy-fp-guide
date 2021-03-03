@@ -8,6 +8,8 @@ Sheepy is an interactive FP guide for Ramda.JS built as a VSCode extension.
 One of the biggest challenges when starting out with FP is picking the right function for each use-case. This interactive guide will help you identify the right function for your task.
 
 
+![Sample gif](./sample.gif)
+
 ## Usage
 This project is build using React and uses [this repo](https://github.com/rebornix/vscode-webview-react) as a template with a few modifications.
 
